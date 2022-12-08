@@ -32,6 +32,7 @@ exports.loginPlayer = async (req, res) => {
     }
 
     try {
+        console.log(data[0].password);
         if(await bcrypt.compare(req.body.password, data[0].password)) {
             res.send('Success');
         } else {
