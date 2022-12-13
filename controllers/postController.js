@@ -3,9 +3,9 @@ const { v4: uuidv4 } = require('uuid');
 
 
 
-exports.warehouseNames = (req,res) => {
+exports.locationPosts = (req,res) => {
     knex('location')
-    .select('id', 'location_name', 'address')
+    .select('id', 'location_name', 'address', 'city')
     .then((data) => {
         res.status(200).json(data);
     })

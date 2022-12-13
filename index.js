@@ -8,8 +8,10 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 
 const playerRoutes = require("./routes/playerRoute");
+const postRoutes = require("./routes/postRoute");
 
 app.use('/', playerRoutes);
+app.use('/', postRoutes);
 
 
 
