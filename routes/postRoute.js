@@ -3,7 +3,12 @@ const postController = require('../controllers/postController.js');
 
 router
     .route("/location")
-        .get(postController.locationPosts);
+        .get(postController.locationPosts)
+        .post(postController.addPosts);
+
+router
+    .route("/location/:id")
+        .get(postController.singlePost);
 
 
 
