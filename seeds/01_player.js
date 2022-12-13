@@ -7,10 +7,20 @@ exports.seed = async function(knex) {
   await knex('player').del()
   await knex('player').insert([
     {
-      id: 1, 
+      id: 1,
       email: 'test@gmail.com',
       password: "password"
     },
+    {
+      id: 2,
+      email: 'test2@gmail.com',
+      password: "password"
+    },
+    {
+      id: 3,
+      email: 'test3@gmail.com',
+      password: "password"
+    }
 
   ]);
 };

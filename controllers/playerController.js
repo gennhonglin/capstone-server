@@ -1,6 +1,9 @@
+require('dotenv').config;
 const knex = require('knex')(require('../knexfile'));
 const { v4: uuidv4 } = require('uuid');
 const bcrypt =  require('bcrypt');
+
+const jwt = require('jsonwebtoken');
 
 
 exports.newPlayer = async (req, res) => {
@@ -32,9 +35,10 @@ exports.loginPlayer = async (req, res) => {
     }
 
     try {
-        console.log(data[0].password);
-        if(await bcrypt.compare(req.body.password, data[0].password)) {
-            res.send('Success');
+        if(await bcrypt.compareSync(req.body.password, data[0].password)) {
+            const token = jwt.sign({id: data[0].id, email: data[0].email}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "900s"});
+            console.log(token);
+            res.send(token);
         } else {
             res.send('Not Allowed');
         }
