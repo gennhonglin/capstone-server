@@ -4,6 +4,9 @@
   "description": "",
   "main": "knexfile.js",
   "dependencies": {
+    "axios": "^1.2.1",
+    "bcrpyt": "^2.0.0",
+    "bcrypt": "^5.1.0",
     "bignumber.js": "^9.0.0",
     "colorette": "^2.0.19",
     "commander": "^9.4.1",
@@ -11,6 +14,7 @@
     "cors": "^2.8.5",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
     "escalade": "^3.1.1",
     "esm": "^3.2.25",
     "express": "^4.18.2",
@@ -22,6 +26,7 @@
     "interpret": "^2.2.0",
     "is-core-module": "^2.11.0",
     "isarray": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
     "knex": "^2.3.0",
     "lodash": "^4.17.21",
     "ms": "^2.1.2",
@@ -39,7 +44,9 @@
     "supports-preserve-symlinks-flag": "^1.0.0",
     "tarn": "^3.0.2",
     "tildify": "^2.0.0",
-    "util-deprecate": "^1.0.2"
+    "util-deprecate": "^1.0.2",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
