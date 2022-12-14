@@ -6,7 +6,7 @@ const axios = require('axios');
 
 exports.locationPosts = (req,res) => {
     knex('location')
-    .select('id', 'location_name', 'address', 'city', 'level')
+    .select('post_id', 'location_name', 'address', 'city', 'level')
     .then((data) => {
         res.status(200).json(data);
     })
@@ -20,9 +20,9 @@ exports.addPosts = async (req, res) => {
 
     try {
         const newPost = req.body;
-        newPost.id = uuidv4();
+        newPost.post_id = uuidv4();
 
-        const newPostUrl = `/location/${newPost.id}`
+        const newPostUrl = `/location/${newPost.post_id}`
         const data = await knex('location').insert(newPost);
         res.status(201).location(newPostUrl).send(newPostUrl);
     } catch (err) {
