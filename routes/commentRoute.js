@@ -4,8 +4,8 @@ const commentController = require('../controllers/commentController');
 
 router
     .route("/comment")
-        .get(commentController.commentPosts);
-            // .post(commentController.addPosts);
+        .get(commentController.commentPosts)
+             .post(commentController.addComment);
 
 
 

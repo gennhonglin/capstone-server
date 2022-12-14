@@ -16,3 +16,19 @@ exports.commentPosts = async (req,res) => {
         res.status(400).send(`Error retrieving post Id: ${err}`)
     }
 }
+
+exports.addComment = async (req, res) => {
+    if(!req.body.comment || !req.body.date) {
+        return res.status(400).send('Please make sure you provide all necessary fields');
+    }
+
+    try {
+        const newComment = req.body;
+        newComment.comment_id = uuidv4();
+
+        const data = await knex('comments').insert(newComment);
+        res.status(201).send(data);
+    } catch (err) {
+        res.status(400).send(`Error creating new Post: ${err}`);
+    }
+}
