@@ -36,9 +36,8 @@ exports.loginPlayer = async (req, res) => {
 
     try {
         if(await bcrypt.compareSync(req.body.password, data[0].password)) {
-            const token = jwt.sign({id: data[0].id, email: data[0].email}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "900s"});
-            console.log(token);
-            res.send(token);
+            const token = jwt.sign({data: data[0]}, process.env.ACCESS_TOKEN_SECRET, {expiresIn: "900s"});
+            res.status(201).send(token);
         } else {
             res.send('Not Allowed');
         }
