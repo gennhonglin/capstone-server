@@ -9,9 +9,12 @@ const PORT = process.env.PORT;
 
 const playerRoutes = require("./routes/playerRoute");
 const postRoutes = require("./routes/postRoute");
+const commentRoutes = require("./routes/commentRoute");
+
 
 app.use('/', playerRoutes);
 app.use('/', postRoutes);
+app.use('/', commentRoutes)
 
 
 
