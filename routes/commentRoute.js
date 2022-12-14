@@ -4,8 +4,11 @@ const commentController = require('../controllers/commentController');
 
 router
     .route("/comment")
-        .get(commentController.commentPosts)
-             .post(commentController.addComment);
+        .post(commentController.addComment);
+
+router
+    .route("/comment/:id")
+        .get(commentController.commentPosts);
 
 
 
