@@ -4,7 +4,7 @@
  */
 exports.up = function(knex) {
     return knex.schema.createTable('location', (table) => {
-        table.uuid('id').primary();
+        table.uuid('post_id').primary();
         table.uuid('player_id')
         .notNullable()
         .references('id')
@@ -16,6 +16,9 @@ exports.up = function(knex) {
         table.string('city').notNullable();
         table.string('registration').notNullable();
         table.string('level').notNullable();
+        table.string('long');
+        table.string('lat');
+        
     });
 };
 
@@ -24,5 +27,5 @@ exports.up = function(knex) {
  * @returns { Promise<void> }
  */
 exports.down = function(knex) {
-  
+    return knex.schema.dropTable('location');
 };

@@ -7,7 +7,7 @@ exports.seed = async function(knex) {
   await knex('location').del()
   await knex('location').insert([
     {
-      id: 1,
+      post_id: 1,
       player_id: 1,
       location_name: "Creekside",
       address: "1 Athletes Way",
@@ -16,7 +16,7 @@ exports.seed = async function(knex) {
       level: "Beginner"
     },
     {
-      id: 2,
+      post_id: 2,
       player_id: 2,
       location_name: "Creekside",
       address: "1 Athletes Way",
@@ -25,7 +25,7 @@ exports.seed = async function(knex) {
       level: "Beginner"
     },
     {
-      id: 3,
+      post_id: 3,
       player_id: 3,
       location_name: "Creekside",
       address: "1 Athletes Way",
