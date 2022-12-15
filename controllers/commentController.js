@@ -7,8 +7,8 @@ exports.commentPosts = async (req,res) => {
         const data = await knex('comments').where({post_id: req.params.id});
 
         if(!data.length) {
-            return res.status(404).send(`Post with id: ${req.body} is NOT a valid post.id `);
-        }
+             return res.status(201);
+         }
 
         res.status(200).json(data);
     } catch(err) {

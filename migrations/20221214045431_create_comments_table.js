@@ -8,7 +8,7 @@ exports.up = function(knex) {
         table.uuid('post_id')
         .notNullable()
         .references('id')
-        .inTable('player')
+        .inTable('location')
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
         table.uuid('player_id')
