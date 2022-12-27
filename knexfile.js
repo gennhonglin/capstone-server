@@ -18,3 +18,8 @@ module.exports = {
     database: DATABASE
   }
 };
+
+// module.exports = {
+//   client: 'mysql',
+//   connection: `mysql://root:ondmqgdsQJKgPy6cbKfD@containers-us-west-101.railway.app:7958/railway`
+// };

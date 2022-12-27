@@ -9,16 +9,19 @@ exports.seed = async function(knex) {
     {
       id: 1,
       email: 'test@gmail.com',
+      name: "Genn",
       password: "password"
     },
     {
       id: 2,
       email: 'test2@gmail.com',
+      name: "Genn",
       password: "password"
     },
     {
       id: 3,
       email: 'test3@gmail.com',
+      name: "Genn",
       password: "password"
     }
 

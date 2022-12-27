@@ -14,6 +14,7 @@ exports.newPlayer = async (req, res) => {
         const newPlayer =  {
             id: uuidv4(),
             email: req.body.email,
+            name: req.body.name,
             password: hashedPass
         }
 

@@ -50,7 +50,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
+    "start": "node --watch index.js",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run"
   },

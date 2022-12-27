@@ -7,7 +7,7 @@ exports.up = function(knex) {
         table.uuid('comment_id').primary();
         table.uuid('post_id')
         .notNullable()
-        .references('id')
+        .references('post_id')
         .inTable('location')
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
