@@ -10,4 +10,9 @@ router
     .route('/player/login')
         .post(playerController.loginPlayer);
 
+router
+    .route('/player/:id')
+        .get(playerController.playerInfo)
+        .post(playerController.updatePlayerInfo);
+
 module.exports = router;

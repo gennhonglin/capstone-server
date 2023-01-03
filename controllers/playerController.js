@@ -46,3 +46,33 @@ exports.loginPlayer = async (req, res) => {
         res.status(500).send();
     }
 }
+
+exports.playerInfo = async (req, res) => {
+    try {
+        const data = await knex('player').where({ id: req.params.id });
+
+        if (!data.length) {
+            return res.status(404).send(`Player with id: ${req.params.id} is not a valid Player `);
+        }
+
+        res.status(200).json(data[0]);
+
+     } catch (error) {
+        res.status(400).send(`Error retrieving Player: ${error}`)
+
+     }
+
+}
+
+exports.updatePlayerInfo = async (req, res) => {
+    if(!req.body.city || !req.body.country || !req.body.experience || !req.body.position || !req.body.type) {
+        return res.status(400).send('Please make sure to provide city, country, experience, position, email, and type');
+    }
+
+    try {
+        await knex('player').where({id: req.params.id}).update(req.body);
+        res.status(204).send(`player with id: ${req.params.id} has been updated`);
+    } catch (error) {
+        res.status(400).send(`Error updating player ${req.params.id} ${err}`)
+    }
+}
